@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+    
+    <data>
+        
+        <variable
+            name="modelview"
+            type="com.example.submissionmade3.movieList.movieDetail.MovieDetailViewModel" />
+
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        tools:context=".movieList.movieDetail.MovieDetail">
+        
+        <ImageView
+            android:minHeight="270dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/lineguide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/posterimaggeshay"
+            android:contentDescription="TODO"
+            android:layout_marginRight="8dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lineguide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="197dp" />
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/lineguide"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/title_judul"
+            style="@style/judul_nya_euy"
+            android:text="Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/titleTv"
+            app:layout_constraintStart_toEndOf="@+id/lineguide"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/judul_nya_euy"
+            android:text="@{modelview.resultsItem.title}"
+            android:id="@+id/titleTv" />
+        
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/titleTv"
+            app:layout_constraintStart_toEndOf="@+id/lineguide"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/release_date_title"
+            style="@style/judul_nya_euy"
+            android:text="Release Date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvdateRelease"
+            style="@style/desc_nya_euy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{modelview.resultsItem.releaseDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/lineguide"
+            app:layout_constraintTop_toBottomOf="@+id/release_date_title" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/tvdateRelease"
+            app:layout_constraintStart_toEndOf="@id/lineguide"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/vote_yuk"
+            style="@style/judul_nya_euy"
+            android:text="Vote yaakk!"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/vote_yuk"
+            app:layout_constraintStart_toEndOf="@+id/lineguide"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/desc_nya_euy"
+            android:text="@{String.valueOf(modelview.resultsItem.voteCount)}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/votetv" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/votetv"
+            app:layout_constraintStart_toEndOf="@+id/lineguide"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/original_language_title"
+            style="@style/judul_nya_euy"
+            android:text="Original Language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/original_language_title"
+            app:layout_constraintStart_toEndOf="@+id/lineguide"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/desc_nya_euy"
+            android:text="@{modelview.resultsItem.originalLanguage}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/originalLanguageTv" />
+
+        <TextView
+            android:id="@+id/text_overview_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{modelview.resultsItem.overview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/poster_img" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

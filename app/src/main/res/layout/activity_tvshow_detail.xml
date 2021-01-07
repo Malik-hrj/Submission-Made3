@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="modelview2"
+            type="com.example.submissionmade3.tvShowList.tvshowdetail.TvShowDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        tools:context=".tvShowList.tvshowdetail.TvShowDetail" >
+
+    <ImageView
+        android:minHeight="259dp"
+        android:layout_marginEnd="9dp"
+        app:layout_constraintEnd_toEndOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/poster_imgage"
+        android:contentDescription="TODO" />
+
+    <androidx.constraintlayout.widget.Guideline
+
+        android:id="@+id/guideline"
+        app:layout_constraintGuide_percent=".5"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/title_judul"
+            style="@style/judul_nya_euy"
+            android:text="Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/title_judul"
+            app:layout_constraintStart_toEndOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/desc_nya_euy"
+            android:text="@{modelview2.resultsItem.name}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvtitle" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/titleTv"
+            app:layout_constraintStart_toEndOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/judul_liris_tanggal"
+            style="@style/judul_nya_euy"
+            android:text="Release Date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/judul_liris_tanggal"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/desc_nya_euy"
+            android:text="@{modelview2.resultsItem.firstAirDate}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvdateRelease" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/tvdateRelease"
+            app:layout_constraintStart_toEndOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/title_vote_yaa"
+            style="@style/judul_nya_euy"
+            android:text="Vote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/title_vote_yaa"
+            app:layout_constraintStart_toEndOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/desc_nya_euy"
+            android:text="@{String.valueOf(modelview2.resultsItem.voteCount)}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvvote" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/tvvote"
+            app:layout_constraintStart_toEndOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/title_original_language2"
+            style="@style/judul_nya_euy"
+            android:text="Original Language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/title_original_language2"
+            app:layout_constraintStart_toEndOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/desc_nya_euy"
+            android:text="@{modelview2.resultsItem.originalLanguage}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvoriginalLanguage" />
+
+
+        <TextView
+            android:text="@{modelview2.resultsItem.overview}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_text_overview"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/poster_imgage"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</layout>
